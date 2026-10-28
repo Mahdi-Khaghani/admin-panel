@@ -188,6 +188,7 @@ td , th {
     top: 64px;
     height: calc(100vh - 64px);
     padding: 0;
+    z-index: 11;
 }
 #sidebar_section .mini_sidebar{
     width: 70px;

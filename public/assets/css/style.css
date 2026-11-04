@@ -18,6 +18,10 @@ body{
     /* box-sizing: content-box */
 }
 
+.disabled{
+    pointer-events: none !important;
+    opacity: 0.5;
+}
 
 /* scrollbars ------------------ */
 ::-webkit-scrollbar{

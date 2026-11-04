@@ -2,6 +2,7 @@ import ModalContainer from "../../components/ModalContainer";
 
 const AddCategory = () => {
   return (
+    
     <ModalContainer
       fullScreen={true}
       id="add_product_category_modal"

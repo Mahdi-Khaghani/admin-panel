@@ -1,4 +1,5 @@
 import PaginatedTable from "../../components/PaginatedTable";
+import AddProduct from "./AddProduct";
 
 const TableProduct = () => {
   const data = [
@@ -18,6 +19,33 @@ const TableProduct = () => {
       price: "2222",
       stock: "7",
       like_count: "2",
+      status: "1",
+    },
+    {
+      id: "3",
+      categoty: "ggg",
+      title: "nnn",
+      price: "232",
+      stock: "14",
+      like_count: "9",
+      status: "1",
+    },
+    {
+      id: "4",
+      categoty: "mmm",
+      title: "www",
+      price: "666",
+      stock: "24",
+      like_count: "3",
+      status: "1",
+    },
+    {
+      id: "5",
+      categoty: "zzz",
+      title: "rrr",
+      price: "455",
+      stock: "3",
+      like_count: "10",
       status: "1",
     },
   ];
@@ -65,13 +93,22 @@ const TableProduct = () => {
     title: "عملیات",
     elements: (itemId) => additionalElemets(itemId),
   };
+
+  const searchParams = {
+    title : "جستجو",
+    placeholder:"قسمتی از عنوان را وارد کنید",
+    searchField:"title"
+  }
   return (
     <>
       <PaginatedTable
         data={data}
         dataInfo={dataInfo}
         additionField={additionField}
-      />
+        searchParams={searchParams}
+      >
+        <AddProduct/>
+      </PaginatedTable>
     </>
   );
 };

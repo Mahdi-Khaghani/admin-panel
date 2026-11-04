@@ -1,12 +1,11 @@
-import Index from "./layout/admin"
+import Index from "./layout/admin";
 
 function App() {
-
   return (
-   <div>
-        <Index/>
-   </div>
-  )
+    <div>
+        <Index />
+    </div>
+  );
 }
 
-export default App
+export default App;

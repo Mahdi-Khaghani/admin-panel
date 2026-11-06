@@ -21,30 +21,30 @@ const Index = () => {
           <SidebarGroupTitle title={"فروشگاه"} />
           <SidebarItem targetPath={"/categories"} title={"مدیریت گروه محصول"} icon={"fas fa-stream"} />
           <SidebarItem targetPath={"/products"} title={"مدیریت محصول"} icon={"fas fa-cube"} />
-          <SidebarItem targetPath={"/test"} title={"مدیریت برند ها"} icon={"fas fa-copyright"} />
-          <SidebarItem targetPath={"/test"} title={"مدیریت گارانتی ها"} icon={"fab fa-pagelines"} />
-          <SidebarItem targetPath={"/test"} title={"مدیریت رنگ ها"} icon={"fas fa-palette"} />
-          <SidebarItem targetPath={"/test"} title={"مدیریت تخفیف ها"} icon={"fas fa-percentage"} />
+          <SidebarItem targetPath={"/brands"} title={"مدیریت برند ها"} icon={"fas fa-copyright"} />
+          <SidebarItem targetPath={"/guaranties"} title={"مدیریت گارانتی ها"} icon={"fab fa-pagelines"} />
+          <SidebarItem targetPath={"/colors"} title={"مدیریت رنگ ها"} icon={"fas fa-palette"} />
+          <SidebarItem targetPath={"/discount"} title={"مدیریت تخفیف ها"} icon={"fas fa-percentage"} />
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title={"سفارشات و سبد"} />
-          <SidebarItem targetPath={"/test"}
+          <SidebarItem targetPath={"/cart"}
             title={"مدیریت سبد ها"}
             icon={"fas fa-shopping-basket"}
           />
-          <SidebarItem targetPath={"/test"} title={"مدیریت سفارشات"} icon={"fas fa-luggage-cart"} />
-          <SidebarItem targetPath={"/test"}
+          <SidebarItem targetPath={"/order"} title={"مدیریت سفارشات"} icon={"fas fa-luggage-cart"} />
+          <SidebarItem targetPath={"/delivery"}
             title={"مدیریت نحوه ارسال"}
             icon={"fas fa-truck-loading"}
           />
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title={"کاربران و همکاران"} />
-          <SidebarItem targetPath={"/test"} title={"مشاهده کاربران"} icon={"fas fa-users"} />
-          <SidebarItem targetPath={"/test"} title={"نقش ها"} icon={"fas fa-user-tag"} />
-          <SidebarItem targetPath={"/test"} title={"مجوز ها"} icon={"fas fa-shield-alt"} />
+          <SidebarItem targetPath={"/users"} title={"مشاهده کاربران"} icon={"fas fa-users"} />
+          <SidebarItem targetPath={"/roles"} title={"نقش ها"} icon={"fas fa-user-tag"} />
+          <SidebarItem targetPath={"/permissions"} title={"مجوز ها"} icon={"fas fa-shield-alt"} />
           {/* <!-- =================================== --> */}
           <SidebarGroupTitle title={"ارتباطات"} />
-          <SidebarItem targetPath={"/test"} title={"سوال ها"} icon={"fas fa-question-circle"} />
-          <SidebarItem targetPath={"/test"} title={"نظرات"} icon={"fas fa-comment"} />
+          <SidebarItem targetPath={"/questions"} title={"سوال ها"} icon={"fas fa-question-circle"} />
+          <SidebarItem targetPath={"/comments"} title={"نظرات"} icon={"fas fa-comment"} />
           {/* <!-- <li className="py-2 btn-group dropstart pe-4">
                     <i className="ms-3 icon fas fa-check text-light"></i>
                     <span className="hiddenable" data-bs-toggle="dropdown" aria-expanded="false">داشبورد</span>

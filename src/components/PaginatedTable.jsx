@@ -66,7 +66,7 @@ const PaginatedTable = ({
         </thead>
         <tbody>
           {tableData.map((d) => (
-            <tr>
+            <tr key={d.id}>
               {dataInfo.map((i) => (
                 <td key={i.field + "_" + d.id}>{d[i.field]}</td>
               ))}
@@ -91,7 +91,7 @@ const PaginatedTable = ({
               </span>
             </li>
             {pages.map((page) => (
-              <li className="page-item">
+              <li className="page-item" key={page}>
                 <span
                   className={`page-link pointer ${currentPage == page ? "alert-success" : ""}`}
                   onClick={() => setCurrentPage(page)}

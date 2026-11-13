@@ -1,11 +1,12 @@
+import { useLocation } from "react-router-dom";
 import AdminLayout from "./layout/admin";
 import AuthLayout from "./layout/auth/AuthLayout";
 
 function App() {
+  const location = useLocation();
   return (
     <div>
-      <AuthLayout />
-      {/* <AdminLayout /> */}
+      {location.pathname.includes("/auth") ? <AuthLayout /> : <AdminLayout />}
     </div>
   );
 }

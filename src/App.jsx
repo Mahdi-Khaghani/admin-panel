@@ -1,9 +1,11 @@
-import Index from "./layout/admin";
+import AdminLayout from "./layout/admin";
+import AuthLayout from "./layout/auth/AuthLayout";
 
 function App() {
   return (
     <div>
-        <Index />
+      <AuthLayout />
+      {/* <AdminLayout /> */}
     </div>
   );
 }

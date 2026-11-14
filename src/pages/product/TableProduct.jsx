@@ -56,8 +56,7 @@ const TableProduct = () => {
     { field: "price", title: "قیمت محصول" },
   ];
 
-  const additionalElemets = (itemId) => {
-    console.log(itemId);
+  const additionalElemets = () => {
     return (
       <>
         <i
@@ -91,7 +90,7 @@ const TableProduct = () => {
 
   const additionField = {
     title: "عملیات",
-    elements: (itemId) => additionalElemets(itemId),
+    elements: () => additionalElemets(),
   };
 
   const searchParams = {

@@ -56,8 +56,7 @@ const CategoryTable = () => {
     { field: "price", title: "قیمت محصول" },
   ];
 
-  const additionalElemets = (itemId) => {
-    console.log(itemId);
+  const additionalElemets = () => {
     return (
       <>
         <i

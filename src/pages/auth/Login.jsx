@@ -1,32 +1,30 @@
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import AuthFormikControl from "../../components/authForm/AuthFormikCintrol";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "../../utils/alert";
+import { loginService } from "../../services/auth";
 
 const initialValues = {
   phone: "",
   password: "",
   remember: false,
 };
-const onSubmit = (values, formikHelpers, navigate) => {
-  axios
-    .post("https://ecomadminapi.azhadev.ir/api/auth/login", {
-      ...values,
-      remember: values.remember ? 1 : 0,
-    })
-    .then((res) => {
-      console.log(res);
-      if (res.status == 200) {
-        localStorage.setItem("loginToken", JSON.stringify(res.data));
-        navigate("/");
-        formikHelpers.setSubmitting(false);
-      } else {
-        formikHelpers.setSubmitting(false);
-        Alert("متاسفم!", res.data.message, "error");
-      }
-    });
+const onSubmit = async (values, formikHelpers, navigate) => {
+  try {
+    const res = await loginService(values);
+    if (res.status == 200) {
+      localStorage.setItem("loginToken", JSON.stringify(res.data));
+      navigate("/");
+      formikHelpers.setSubmitting(false);
+    } else {
+      Alert("متاسفم!", res.data.message, "error");
+    }
+    formikHelpers.setSubmitting(false);
+  } catch {
+    formikHelpers.setSubmitting(false);
+    Alert("متاسفم!", "متاسفم خطایی از سمت سرور رخ داده است!", "error");
+  }
 };
 const validationSchema = Yup.object({
   phone: Yup.number().required("لطفا این قسمت را پر کنید"),
@@ -47,7 +45,6 @@ const Login = () => {
       validationSchema={validationSchema}
     >
       {(formik) => {
-        console.log(formik);
         return (
           <div className="wrap-login100">
             <Form className="login100-form validate-form pos-relative d-flex flex-column align-items-center justify-content-center">

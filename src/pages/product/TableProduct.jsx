@@ -88,16 +88,18 @@ const TableProduct = () => {
     );
   };
 
-  const additionField = {
-    title: "عملیات",
-    elements: () => additionalElemets(),
-  };
+  const additionField = [
+    {
+      title: "عملیات",
+      elements: () => additionalElemets(),
+    },
+  ];
 
   const searchParams = {
-    title : "جستجو",
-    placeholder:"قسمتی از عنوان را وارد کنید",
-    searchField:"title"
-  }
+    title: "جستجو",
+    placeholder: "قسمتی از عنوان را وارد کنید",
+    searchField: "title",
+  };
   return (
     <>
       <PaginatedTable
@@ -106,7 +108,7 @@ const TableProduct = () => {
         additionField={additionField}
         searchParams={searchParams}
       >
-        <AddProduct/>
+        <AddProduct />
       </PaginatedTable>
     </>
   );

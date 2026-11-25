@@ -4,13 +4,14 @@ import { Alert } from "../utils/alert";
 
 axios.interceptors.response.use(
   (res) => {
-    if (res.status != 200 && res.status != 201) {
+    if (res.status < 200 || res.status >= 300) {
       Alert("مشکل", res.data.message, "warning");
     }
     return res;
   },
   (error) => {
-    Alert(error.response.status, "مشکلی رخ داده است!", "error");
+    const status = error.response?.status || "خطا";
+    Alert(status, "مشکلی رخ داده است!", "error");
     return Promise.reject(error);
   },
 );
@@ -23,7 +24,6 @@ const httpService = (url, method, data = null) => {
     data,
     headers: {
       Authorization: loginToken ? `Bearer ${loginToken.token}` : null,
-      "Content-Type": "application/json",
     },
   });
 };

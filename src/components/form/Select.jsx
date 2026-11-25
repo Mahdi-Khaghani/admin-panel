@@ -5,6 +5,9 @@ const Select = ({ options, name, label, className }) => {
   return (
     <div className={`col-12 ${className}`}>
       <div className="input-group mb-3 dir-ltr">
+        <span className="input-group-text w_6rem justify-content-center">
+          {label}
+        </span>
         <FastField as="select" className="form-control" id={name} name={name}>
           <option>دسته والد را انتخاب کنید...</option>
           {options.map((o) => (
@@ -13,9 +16,6 @@ const Select = ({ options, name, label, className }) => {
             </option>
           ))}
         </FastField>
-        <span className="input-group-text w_6rem justify-content-center">
-          {label}
-        </span>
       </div>
       <ErrorMessage name={name} component={FormikError} />
     </div>

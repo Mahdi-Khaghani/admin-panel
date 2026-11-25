@@ -8,6 +8,9 @@ const File = ({ name, label, className, placeholder }) => {
         return (
           <div className={`col-12 ${className}`}>
             <div className="input-group mb-3 dir-ltr">
+              <span className="input-group-text w_6rem justify-content-center">
+                {label}
+              </span>
               <input
                 type="file"
                 className="form-control"
@@ -15,9 +18,6 @@ const File = ({ name, label, className, placeholder }) => {
                 placeholder={placeholder}
                 onChange={(e) => form.setFieldValue(name, e.target.files[0])}
               />
-              <span className="input-group-text w_6rem justify-content-center">
-                {label}
-              </span>
             </div>
             <ErrorMessage name={name} component={FormikError} />
           </div>

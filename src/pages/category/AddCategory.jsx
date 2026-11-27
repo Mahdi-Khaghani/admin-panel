@@ -1,4 +1,4 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, FastField } from "formik";
 import ModalContainer from "../../components/ModalContainer";
 import * as Yup from "yup";
 import FormikControl from "../../components/form/FormikControl";
@@ -8,6 +8,8 @@ import {
   getCategoriesServices,
 } from "../../services/category";
 import { Alert } from "../../utils/alert";
+import SpinnerLoad from "../../components/SpinnerLoad";
+import SubmitButton from "../../components/form/SubmitButton";
 
 const initialsValues = {
   parent_id: "",
@@ -18,7 +20,7 @@ const initialsValues = {
   show_in_menu: true,
 };
 
-const onSubmit = async (values, actions,setForceRender) => {
+const onSubmit = async (values, actions, setForceRender) => {
   try {
     values = {
       ...values,
@@ -29,7 +31,7 @@ const onSubmit = async (values, actions,setForceRender) => {
     if (res.status >= 200 && res.status < 300) {
       Alert("عملیات موفق", res.data.message, "success");
       actions.resetForm();
-      setForceRender((last) => last+1)
+      setForceRender((last) => last + 1);
     }
   } catch (error) {
     console.log(error);
@@ -62,7 +64,7 @@ const validationSchema = Yup.object({
   show_in_menu: Yup.boolean(),
 });
 
-const AddCategory = ({setForceRender}) => {
+const AddCategory = ({ setForceRender }) => {
   const [parents, setParents] = useState([]);
   const handleGetParentsCategories = async () => {
     try {
@@ -98,7 +100,9 @@ const AddCategory = ({setForceRender}) => {
       >
         <Formik
           initialValues={initialsValues}
-          onSubmit={(values,actions) => onSubmit(values,actions,setForceRender)}
+          onSubmit={(values, actions) =>
+            onSubmit(values, actions, setForceRender)
+          }
           validationSchema={validationSchema}
         >
           <Form>
@@ -156,7 +160,7 @@ const AddCategory = ({setForceRender}) => {
                   </div>
                 </div>
                 <div className="btn_box text-center col-12 col-md-6 col-lg-8 mt-4">
-                  <button className="btn btn-primary ">ذخیره</button>
+                    <SubmitButton/>
                 </div>
               </div>
             </div>
